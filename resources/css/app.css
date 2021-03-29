@@ -1,7 +1,9 @@
 /* Google Font: BioRhyme */
 @import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@300;400;700&display=swap');
 
+
 /* ./resources/css/app.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
