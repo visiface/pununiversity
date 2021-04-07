@@ -17,4 +17,4 @@ use App\Http\Controllers\CourseController;
 |
 */
 
-Route::resource('/', CourseController::class);
+Route::resource('/courses', CourseController::class);
