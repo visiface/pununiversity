@@ -39,12 +39,20 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $course = new Course;
-        $course->name = $request->input('name');
-        $course->degree_type = $request->input('degree_type');
-        $course->description = $request->input('description');
+        // Below is one way of doing the same thing!
+            // $course = new Course;
+            // $course->name = $request->input('name');
+            // $course->degree_type = $request->input('degree_type');
+            // $course->description = $request->input('description');
 
-        $course->save();
+            // $course->save();
+
+        $course = Course::create([
+            'name' => $request->input('name'),
+            'degree_type' => $request->input('degree_type'),
+            'description' => $request->input('description')
+        ]);
+
         return redirect('/courses');
     }
 
@@ -65,9 +73,11 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit($id) {
+        
+        $course = Course::find($id);
+
+        return view('courses.edit')->with('course', $course);
     }
 
     /**
@@ -79,7 +89,14 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $course = Course::where('id', $id)
+            ->update([
+                'name' => $request->input('name'),
+                'degree_type' => $request->input('degree_type'),
+                'description' => $request->input('description')
+        ]);
+
+        return redirect('/courses');
     }
 
     /**

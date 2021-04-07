@@ -20,6 +20,14 @@
             @foreach ($courses as $course)
                 
                 <div class="m-auto">
+                    <div class="float-right">
+                        <a 
+                            href="courses/{{ $course->id }}/edit"
+                            class="border-b-2 pb-2 border-dotted text-gray-400 text-xs">
+                                Edit Course &rarr;
+                        </a>
+                    </div>
+                    
                     <span class="uppercase text-blue-500 font-bold text-xs">
                         {{ $course->degree_type }}
                     </span>
