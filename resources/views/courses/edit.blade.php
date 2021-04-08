@@ -28,8 +28,9 @@
                         value="{{ $course->degree_type }}">
 
                     <input 
-                        type="text"
-                        class="block shadow-5xl mb-10 p-2 w-80 placeholder-gray-400"
+                        type="textarea"
+                        rows="4" cols="50"
+                        class="block shadow-5xl mb-10 p-2 w-80 h-40 placeholder-gray-400"
                         name="description"
                         value="{{ $course->description }}">
 

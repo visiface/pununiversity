@@ -11,7 +11,7 @@
         <div class="m-auto w-4/5 pt-10">
             <a 
                 href="courses/create"
-                class="border-b-2 p-4 bg-green-500 text-gray-100">
+                class="border-b-2 p-4 bg-green-500 text-gray-100 hover:bg-green-600">
                     Add New Course &rarr;
             </a>
         </div>
@@ -21,13 +21,7 @@
                 
                 <div class="m-auto">
                     
-                    <div class="float-right">
-                        <a 
-                            href="courses/{{ $course->id }}/edit"
-                            class="border-b-2 pb-1 border-dotted text-gray-400 text-xs">
-                                Edit Course &rarr;
-                        </a>
-                   
+                    <div class="float-right flex justify-end">
                         <form action="/courses/{{ $course->id }}" 
                             class="pt-1"
                             method="POST">
@@ -35,9 +29,15 @@
                                 @method('delete')
                                 <button 
                                     type="submit"
-                                    class="border-b-2 pb-2 border-dotted text-red-500 text-xs">
+                                    class=" text-red-500 hover:text-red-300 text-xs border-b-2 border-dotted pb-1">
                                         Delete Course &rarr;
                                 </button>
+                                
+                            <a 
+                            href="courses/{{ $course->id }}/edit"
+                            class="text-gray-400 text-xs hover:text-gray-600 ml-4 border-b-2 border-dotted pb-1">
+                                Edit Course &rarr;
+                            </a>
                         </form>
                     </div>
 
