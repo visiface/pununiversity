@@ -29,13 +29,13 @@
                                 @method('delete')
                                 <button 
                                     type="submit"
-                                    class=" text-red-500 hover:text-red-300 text-xs border-b-2 border-dotted pb-1">
+                                    class=" text-red-500 hover:text-red-700 text-xs border-red-500 hover:border-red-700 border-b pb-1">
                                         Delete Course &rarr;
                                 </button>
                                 
                             <a 
                             href="courses/{{ $course->id }}/edit"
-                            class="text-gray-400 text-xs hover:text-gray-600 ml-4 border-b-2 border-dotted pb-1">
+                            class="text-gray-400 text-xs hover:text-gray-600 ml-4 border-gray-400 hover:border-gray-600 border-b pb-1">
                                 Edit Course &rarr;
                             </a>
                         </form>
