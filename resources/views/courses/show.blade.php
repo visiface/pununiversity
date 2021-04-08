@@ -28,7 +28,7 @@
                     {{ $course->name }}
                 </h2>
 
-                <div class="text-lg text-gray-700 py-3 ml-4">
+                <div class="text-lg text-gray-700 py-3">
                     {{ $course->description }}
                 </div>
 
@@ -43,11 +43,11 @@
 
                 <div class="p-3 flex text-center uppercase text-gray-400 font-bold text-xs">
                     <div class="w-1/4 border-gray-400 border-b pb-1">
-                        subject
+                        class name
                     </div>
 
                     <div class="w-1/4 border-gray-400 border-b pb-1">
-                        class name
+                        subject
                     </div>
 
                     <div class="w-1/4 border-gray-400 border-b pb-1">
@@ -61,33 +61,37 @@
 
                 
                 @forelse ($course->courseClasses as $courseclass)
-                    <div class="px-4 pb-4 flex text-center">
-                        <div class="w-1/4">
-                            {{ $courseclass->subject }}
-                        </div>
-
-                        <div class="w-1/4">
+                    <div class="p-4 flex text-left">
+                        <div class="w-1/4 uppercase text-blue-500 font-semibold">
                             {{ $courseclass->name }}
                         </div>
 
-                        <div class="w-1/4">
+                        <div class="w-1/4 font-semibold uppercase">
+                            {{ $courseclass->subject }}
+                        </div>
+
+                        <div class="w-1/4 text-xs">
                             {{ $courseclass->description }}
                         </div>
 
-                        <div class="w-1/4">
+                        <div class="w-1/4 text-center">
                             <div>
-                                edit
-                            </div>
-                            
-                            <div>
-                                delete
+                                <span class="text-red-500 hover:text-red-700 text-xs border-red-500 hover:border-red-700 border-b pb-1">
+                                    delete
+                                </span>
+
+                                <span class="px-1"></span>
+
+                                <span class="text-gray-400 text-xs hover:text-gray-600 ml-4 border-gray-400 hover:border-gray-600 border-b pb-1">
+                                    edit
+                                </span>
                             </div>
                         </div>
 
                         <hr class="mt-4 mb-8">
                     </div>
                 @empty
-                    <div>
+                    <div class="px-4 pb-4 flex text-center">
                         No Classes Found.
                     </div>
                 @endforelse
