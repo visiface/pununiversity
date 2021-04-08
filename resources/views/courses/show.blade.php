@@ -59,37 +59,39 @@
                     </div>
                 </div>
 
-                <div class="px-4 flex text-center">
+                
                 @forelse ($course->courseClasses as $courseclass)
-                    <div class="w-1/4">
-                        {{ $courseclass->subject }}
-                    </div>
-
-                    <div class="w-1/4">
-                        {{ $courseclass->name }}
-                    </div>
-
-                    <div class="w-1/4">
-                        {{ $courseclass->description }}
-                    </div>
-
-                    <div class="w-1/4">
-                        <div>
-                            edit
+                    <div class="px-4 pb-4 flex text-center">
+                        <div class="w-1/4">
+                            {{ $courseclass->subject }}
                         </div>
-                        
-                        <div>
-                            delete
-                        </div>
-                    </div>
 
-                    <hr class="mt-4 mb-8">
+                        <div class="w-1/4">
+                            {{ $courseclass->name }}
+                        </div>
+
+                        <div class="w-1/4">
+                            {{ $courseclass->description }}
+                        </div>
+
+                        <div class="w-1/4">
+                            <div>
+                                edit
+                            </div>
+                            
+                            <div>
+                                delete
+                            </div>
+                        </div>
+
+                        <hr class="mt-4 mb-8">
+                    </div>
                 @empty
                     <div>
                         No Classes Found.
                     </div>
                 @endforelse
-                </div>
+                
 
             </div>
 
