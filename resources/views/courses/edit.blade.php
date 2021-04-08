@@ -27,12 +27,10 @@
                         name="degree_type"
                         value="{{ $course->degree_type }}">
 
-                    <input 
-                        type="textarea"
+                    <textarea 
                         rows="4" cols="50"
                         class="block shadow-5xl mb-10 p-2 w-80 h-40 placeholder-gray-400"
-                        name="description"
-                        value="{{ $course->description }}">
+                        name="description">{{ $course->description }}</textarea>
 
                     <button 
                         type="submit" 
