@@ -41,7 +41,7 @@
                     Class Overview
                 </div>
 
-                <div class="p-3 flex text-center uppercase text-gray-400 font-bold text-xs">
+                <div class="pb-4 flex text-center uppercase text-gray-400 font-bold text-xs">
                     <div class="w-1/4 border-gray-400 border-b pb-1">
                         class name
                     </div>
@@ -61,7 +61,7 @@
 
                 
                 @forelse ($course->courseClasses as $courseclass)
-                    <div class="p-4 flex text-left">
+                    <div class=" flex text-left">
                         <div class="w-1/4 uppercase text-blue-500 font-semibold">
                             {{ $courseclass->name }}
                         </div>
@@ -70,26 +70,26 @@
                             {{ $courseclass->subject }}
                         </div>
 
-                        <div class="w-1/4 text-xs">
+                        <div class="w-1/4 text-xs pb-4">
                             {{ $courseclass->description }}
                         </div>
 
                         <div class="w-1/4 text-center">
                             <div>
                                 <span class="text-red-500 hover:text-red-700 text-xs border-red-500 hover:border-red-700 border-b pb-1">
-                                    delete
+                                    delete &rarr;
                                 </span>
 
                                 <span class="px-1"></span>
 
                                 <span class="text-gray-400 text-xs hover:text-gray-600 ml-4 border-gray-400 hover:border-gray-600 border-b pb-1">
-                                    edit
+                                    edit &rarr;
                                 </span>
                             </div>
                         </div>
-
-                        <hr class="mt-4 mb-8">
                     </div>
+
+                    <hr class="pb-2 pt-1 border-gray-300">
                 @empty
                     <div class="px-4 pb-4 flex text-center">
                         No Classes Found.
