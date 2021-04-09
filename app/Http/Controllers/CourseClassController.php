@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\CourseClass;
 
 class CourseClassController extends Controller
 {
@@ -13,7 +14,11 @@ class CourseClassController extends Controller
      */
     public function index()
     {
-        //
+        $courseclasses = CourseClass::all();
+
+        return view('courseclasses.courseclasses', [
+            'courseclasses' => $courseclasses
+        ]);
     }
 
     /**
@@ -23,7 +28,7 @@ class CourseClassController extends Controller
      */
     public function create()
     {
-        //
+        return view('courseclasses.create');
     }
 
     /**
@@ -34,7 +39,13 @@ class CourseClassController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $courseclass = CourseClass::create([
+            'name' => $request->input('name'),
+            'subject' => $request->input('subject'),
+            'description' => $request->input('description')
+        ]);
+
+        return redirect('/courses/*');
     }
 
     /**
@@ -45,7 +56,9 @@ class CourseClassController extends Controller
      */
     public function show($id)
     {
-        //
+        $courseclass = CourseClass::find($id);
+
+        return view('courses.show')->with('courseclass', $courseclass);
     }
 
     /**
@@ -56,7 +69,9 @@ class CourseClassController extends Controller
      */
     public function edit($id)
     {
-        //
+        $courseclass = CourseClass::find($id);
+
+        return view('courseclasses.edit')->with('courseclass', $courseclass);
     }
 
     /**
@@ -68,7 +83,14 @@ class CourseClassController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $courseclass = CourseClass::where('id', $id)
+            ->update([
+                'name' => $request->input('name'),
+                'degree_type' => $request->input('degree_type'),
+                'description' => $request->input('description')
+        ]);
+
+        return redirect('/courses/*');
     }
 
     /**
@@ -77,8 +99,10 @@ class CourseClassController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CourseClass $courseclass)
     {
-        //
+        $courseclass->delete();
+
+        return redirect('/courses/*');
     }
 }
