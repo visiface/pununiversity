@@ -3,6 +3,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CourseClassController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +20,5 @@ use App\Http\Controllers\CourseController;
 */
 
 Route::resource('/courses', CourseController::class);
+Route::resource('/courseclasses', CourseClassController::class);
+Route::resource('/students', StudentController::class);

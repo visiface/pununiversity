@@ -10,7 +10,7 @@
 
         <div class="m-auto w-4/5 pt-10">
             <a 
-                href="/courses"
+                href="{{ route('courses.index') }}"
                 class="text-gray-500 hover:text-gray-700 bg-gray-200 hover:bg-gray-300 p-4">
                     &larr; Back to Courses
             </a>
