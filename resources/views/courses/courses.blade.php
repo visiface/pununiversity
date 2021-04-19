@@ -58,7 +58,7 @@
                         <a 
                             href="/courses/{{ $course->id }}"
                             class="text-gray-400 text-xs hover:text-gray-600 ml-4 border-gray-400 hover:border-gray-600 border-b pb-1">
-                                Manage all Classes for {{ $course->name }} &rarr;
+                                View all Classes for {{ $course->name }} &rarr;
                         </a>
                         
                     </div>
