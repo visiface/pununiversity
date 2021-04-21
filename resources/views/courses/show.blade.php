@@ -42,32 +42,56 @@
                 </div>
 
                 <div class="text-left pb-6 flex uppercase text-gray-400 font-bold text-xs">
-                    <div class="w-1/3 border-gray-400 border-b pb-1">
+                    <div class="w-1/4 border-gray-400 border-b pb-1">
                         class name
                     </div>
 
-                    <div class="w-1/3 border-gray-400 border-b pb-1">
+                    <div class="w-1/4 border-gray-400 border-b pb-1">
                         subject
                     </div>
 
-                    <div class="w-1/3 border-gray-400 border-b pb-1">
+                    <div class="w-1/4 border-gray-400 border-b pb-1">
                         description
+                    </div>
+
+                    <div class="w-1/4 border-gray-400 border-b pb-1 pl-8">
+                        Actions
                     </div>
                 </div>
 
                 
                 @forelse ($course->courseClasses as $courseclass)
                     <div class="pt-2 pb-3 flex text-left">
-                        <div class="w-1/3 uppercase text-blue-500 font-semibold pt-2">
+                        <div class="w-1/4 uppercase text-blue-500 font-semibold pt-2">
                             {{ $courseclass->name }}
                         </div>
 
-                        <div class="w-1/3 font-semibold uppercase pt-2">
+                        <div class="w-1/4 font-semibold uppercase pt-2">
                             {{ $courseclass->subject }}
                         </div>
 
-                        <div class="w-1/3 text-xs pb-4 pt-2">
+                        <div class="w-1/4 text-xs pb-4 pt-2">
                             {{ $courseclass->description }}
+                        </div>
+
+                        <div class="w-1/4 text-xs pb-4 pt-2 pl-8">
+                            <form action="/courses/{{ $courseclass->id }}" 
+                                class="pt-1"
+                                method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <button 
+                                        type="submit"
+                                        class=" text-red-500 hover:text-red-700 text-xs border-red-500 hover:border-red-700 border-b pb-1">
+                                            Delete Class &rarr;
+                                    </button>
+                                    
+                                <a 
+                                href="courses/{{ $courseclass->id }}/edit"
+                                class="text-gray-400 text-xs hover:text-gray-600 ml-4 border-gray-400 hover:border-gray-600 border-b pb-1">
+                                    Edit Class &rarr;
+                                </a>
+                            </form>
                         </div>
                     </div>
 
@@ -77,10 +101,15 @@
                         No Classes Found.
                     </div>
                 @endforelse
-                
 
+                <div class="pt-10">
+                    <a 
+                        href="{{ route('courseclasses.create') }}"
+                        class="text-gray-500 hover:text-gray-700 bg-green-200 hover:bg-green-300 p-4 m-auto block max-w-max">
+                            Add New Class &rarr;
+                    </a>
+                </div>
             </div>
-
         </div>
     </div>
 @endsection
