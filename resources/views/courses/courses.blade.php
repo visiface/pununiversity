@@ -46,8 +46,10 @@
                         {{ $course->degree_type }}
                     </span>
 
-                    <h2 class="text-gray-700 text-4xl">
-                        {{ $course->name }}
+                    <h2 class="text-gray-700 hover:text-gray-500 text-4xl">
+                        <a href="/courses/{{ $course->id }}">
+                            {{ $course->name }}
+                        </a>
                     </h2>
 
                     <div class="text-lg text-gray-700 py-3 ml-4">
