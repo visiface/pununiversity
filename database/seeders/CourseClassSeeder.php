@@ -71,6 +71,6 @@ class CourseClassSeeder extends Seeder
                     'description' => "Abstract Course on the different Visual Forms of Social Science, to include: Sculptures, Images on different Mediums, Theatre, and Digital Means. Critical Thinking and Thesis intensive course.",
                 ]);
             }
-        // END For the Senses IV
+        // END Advanced Calembour Crafting Studies
     }
 }
