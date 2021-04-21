@@ -18,8 +18,10 @@ class CreateCoursesTable extends Migration
             $table->string('name');
             $table->string('degree_type');
             $table->longText('description');
+            
             $table->timestamp('created_at')
                 ->useCurrent();
+            
             $table->timestamp('updated_at')
                 ->useCurrent();
         });

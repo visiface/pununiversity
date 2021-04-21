@@ -19,10 +19,13 @@ class CreateCourseClasses extends Migration
             $table->string('name');
             $table->string('subject');
             $table->longText('description');
+            
             $table->timestamp('created_at')
                 ->useCurrent();
+            
             $table->timestamp('updated_at')
                 ->useCurrent();
+            
             $table->foreign('course_id')
                 ->references('id')
                 ->on('courses')
