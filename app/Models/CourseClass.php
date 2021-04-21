@@ -13,7 +13,12 @@ class CourseClass extends Model
 
     protected $primaryKey = "id";
 
-    protected $fillable = ['course_id', 'name', 'degree_type', 'description'];
+    protected $fillable = [
+        'course_id', 
+        'name', 
+        'degree_type', 
+        'description'
+    ];
 
     // a course class belongs to a course!
         public function course() {
