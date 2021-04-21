@@ -5,32 +5,45 @@
     <div class="m-auto w-4/8 py-24">
         <div class="text-center">
             <h1 class="text-5xl uppercase bold">
-                Create Course
+                Create Class
             </h1>
         </div>
 
         <div class="flex justify-center pt-20">
-            <form action="/courses" method="POST">
+            <form action="/courseclasses" method="POST">
                 @csrf
                 <div class="block">
-
+                    <span class="uppercase text-blue-500 font-bold text-xs">
+                        Select a Course:
+                    </span>
+                    <select 
+                        name="course_id" 
+                        id="course_id"
+                        class="block shadow-5xl mb-10 p-2 w-80">
+                            @foreach ($courses as $course)
+                                <option value="{{ $course->id }}">
+                                    {{ $course->name }}
+                                </option>
+                            @endforeach
+                    </select>
+                    
                     <input 
                         type="text"
                         class="block shadow-5xl mb-10 p-2 w-80 placeholder-gray-400"
                         name="name"
-                        placeholder="Course Name">
+                        placeholder="Class Name">
 
                     <input 
                         type="text"
                         class="block shadow-5xl mb-10 p-2 w-80 placeholder-gray-400"
                         name="degree_type"
-                        placeholder="Type of Degree">
+                        placeholder="Subject">
 
                     <input 
                         type="text"
                         class="block shadow-5xl mb-10 p-2 w-80 placeholder-gray-400"
                         name="description"
-                        placeholder="Course Description">
+                        placeholder="Class Description">
 
                     <button 
                         type="submit" 

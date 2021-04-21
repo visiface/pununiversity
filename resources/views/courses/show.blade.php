@@ -75,7 +75,7 @@
                         </div>
 
                         <div class="w-1/4 text-xs pb-4 pt-2 pl-8">
-                            <form action="/courses/{{ $courseclass->id }}" 
+                            <form action="/courseclasses/{{ $courseclass->id }}" 
                                 class="pt-1"
                                 method="POST">
                                     @csrf
@@ -87,7 +87,7 @@
                                     </button>
                                     
                                 <a 
-                                href="courses/{{ $courseclass->id }}/edit"
+                                href="courseclasses/{{ $courseclass->id }}/edit"
                                 class="text-gray-400 text-xs hover:text-gray-600 ml-4 border-gray-400 hover:border-gray-600 border-b pb-1">
                                     Edit Class &rarr;
                                 </a>

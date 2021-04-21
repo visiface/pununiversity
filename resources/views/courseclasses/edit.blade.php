@@ -10,7 +10,7 @@
         </div>
 
         <div class="flex justify-center pt-20">
-            <form action="/courses/{{ $course->id }}" method="POST">
+            <form action="/courseclasses/{{ $course->id }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="block">
