@@ -24,7 +24,7 @@
                     <input 
                         type="text"
                         class="block shadow-5xl mb-10 p-2 w-80 placeholder-gray-400"
-                        name="degree_type"
+                        name="subject"
                         value="{{ $courseclass->subject }}">
 
                     <textarea 
