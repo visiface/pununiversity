@@ -10,23 +10,10 @@
         </div>
 
         <div class="flex justify-center pt-20">
-            <form action="/courseclasses/{{ $courseclass->id }}" method="POST">
+            <form action="/courses/{{ $course->id }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="block">
-                    <span class="uppercase text-blue-500 font-bold text-xs">
-                        Select a Course:
-                    </span>
-                    <select 
-                        name="course_id" 
-                        class="block shadow-5xl mb-10 p-2 w-80">
-                            @foreach ($courses as $course)
-                                <option value="{{ $course->id }}">
-                                    {{ $course->name }}
-                                </option>
-                            @endforeach
-                    </select>
-
                     <input 
                         type="text"
                         class="block shadow-5xl mb-10 p-2 w-80 placeholder-gray-400"
