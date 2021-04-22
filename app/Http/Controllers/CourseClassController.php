@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CourseClass;
-use App\Models\Course;
 
 class CourseClassController extends Controller
 {
@@ -28,11 +27,8 @@ class CourseClassController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        $courses = Course::all();
-        
-        return view('courseclasses.create')
-            ->with('courses', $courses);
+    {   
+        return view('courseclasses.create');
     }
 
     /**
@@ -76,11 +72,9 @@ class CourseClassController extends Controller
     public function edit($id)
     {
         $courseclass = CourseClass::find($id);
-        $courses = Course::all();
         
         return view('courseclasses.edit')
-            ->with('courseclass', $courseclass)
-            ->with('courses', $courses);
+            ->with('courseclass', $courseclass);
     }
 
     /**
