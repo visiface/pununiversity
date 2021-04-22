@@ -80,7 +80,8 @@ class CourseController extends Controller
         
         $course = Course::find($id);
 
-        return view('courses.edit')->with('course', $course);
+        return view('courses.edit')
+            ->with('course', $course);
     }
 
     /**

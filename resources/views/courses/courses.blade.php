@@ -59,13 +59,13 @@
                     <div>
                         <a 
                             href="/courses/{{ $course->id }}"
-                            class="text-gray-400 text-xs hover:text-gray-600 ml-4 border-gray-400 hover:border-gray-600 border-b pb-1">
+                            class="no-underline text-gray-400 text-xs hover:text-gray-600 ml-4 border-gray-400 hover:border-gray-600 pb-1">
                                 View all Classes for {{ $course->name }} &rarr;
                         </a>
                         
                     </div>
 
-                    <hr class="mt-4 mb-8">
+                    <hr class="border-gray-400 my-8">
                    
                 </div>
 
