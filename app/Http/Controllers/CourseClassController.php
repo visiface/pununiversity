@@ -78,7 +78,6 @@ class CourseClassController extends Controller
         $courseclass = CourseClass::find($id);
         $courses = Course::all();
         
-
         return view('courseclasses.edit')
             ->with('courseclass', $courseclass)
             ->with('courses', $courses);
