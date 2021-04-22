@@ -10,7 +10,6 @@ class CourseClass extends Model
     use HasFactory;
 
     protected $table ='course_classes';
-
     protected $primaryKey = "id";
 
     protected $fillable = [
@@ -19,6 +18,8 @@ class CourseClass extends Model
         'subject', 
         'description'
     ];
+
+    
 
     // a course class belongs to a course!
         public function course() {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\CourseClass;
 
 class CourseClassController extends Controller
@@ -15,9 +16,11 @@ class CourseClassController extends Controller
     public function index()
     {
         $courseclasses = CourseClass::all();
+        $courses = DB::select('select * from courses');
 
         return view('courseclasses.courseclasses', [
-            'courseclasses' => $courseclasses
+            'courseclasses' => $courseclasses,
+            'courses' => $courses
         ]);
     }
 
@@ -28,7 +31,13 @@ class CourseClassController extends Controller
      */
     public function create()
     {   
-        return view('courseclasses.create');
+        $courseclasses = CourseClass::all();
+        $courses = DB::select('select * from courses');
+
+        return view('courseclasses.create', [
+            'courseclasses' => $courseclasses,
+            'courses' => $courses
+        ]);
     }
 
     /**
@@ -72,9 +81,11 @@ class CourseClassController extends Controller
     public function edit($id)
     {
         $courseclass = CourseClass::find($id);
+        $courses = DB::select('select * from courses');
         
         return view('courseclasses.edit')
-            ->with('courseclass', $courseclass);
+            ->with('courseclass', $courseclass)
+            ->with('courses', $courses);
     }
 
     /**
