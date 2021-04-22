@@ -97,7 +97,7 @@ class CourseClassController extends Controller
             ->update([
                 'course_id' => $request->input('course_id'),
                 'name' => $request->input('name'),
-                'degree_type' => $request->input('degree_type'),
+                'subject' => $request->input('subject'),
                 'description' => $request->input('description')
         ]);
 
