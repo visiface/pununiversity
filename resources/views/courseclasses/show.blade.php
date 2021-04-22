@@ -21,15 +21,15 @@
             <div class="m-auto">
 
                 <span class="uppercase text-blue-500 font-bold text-xs">
-                    {{ $course->degree_type }}
+                    {{ $courseclass->subject }}
                 </span>
 
                 <h2 class="text-gray-700 text-4xl">
-                    {{ $course->name }}
+                    {{ $courseclass->name }}
                 </h2>
 
                 <div class="text-lg text-gray-700 py-3">
-                    {{ $course->description }}
+                    {{ $courseclass->description }}
                 </div>
 
                 <hr class="mt-4 mb-8">

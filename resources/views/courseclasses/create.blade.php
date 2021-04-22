@@ -18,7 +18,6 @@
                     </span>
                     <select 
                         name="course_id" 
-                        id="course_id"
                         class="block shadow-5xl mb-10 p-2 w-80">
                             @foreach ($courses as $course)
                                 <option value="{{ $course->id }}">
@@ -36,7 +35,7 @@
                     <input 
                         type="text"
                         class="block shadow-5xl mb-10 p-2 w-80 placeholder-gray-400"
-                        name="degree_type"
+                        name="subject"
                         placeholder="Subject">
 
                     <input 

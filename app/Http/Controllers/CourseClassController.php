@@ -44,12 +44,13 @@ class CourseClassController extends Controller
     public function store(Request $request)
     {
         $courseclass = CourseClass::create([
+            'course_id' => $request->input('course_id'),
             'name' => $request->input('name'),
             'subject' => $request->input('subject'),
             'description' => $request->input('description')
         ]);
 
-        return redirect('/courses/*');
+        return redirect('/courses');
     }
 
     /**
@@ -94,12 +95,13 @@ class CourseClassController extends Controller
     {
         $courseclass = CourseClass::where('id', $id)
             ->update([
+                'course_id' => $request->input('course_id'),
                 'name' => $request->input('name'),
                 'degree_type' => $request->input('degree_type'),
                 'description' => $request->input('description')
         ]);
 
-        return redirect('/courses/*');
+        return redirect('/courses');
     }
 
     /**
@@ -112,6 +114,6 @@ class CourseClassController extends Controller
     {
         $courseclass->delete();
 
-        return redirect('/courses/*');
+        return redirect('/courses');
     }
 }
