@@ -10,7 +10,7 @@
 
         <div class="m-auto w-4/5 pt-10">
             <a 
-                href="#"
+                href="{{ route('courseclasses.create') }}"
                 class="border-b-2 p-4 bg-green-500 text-gray-100 hover:bg-green-600">
                     Add New Class &rarr;
             </a>

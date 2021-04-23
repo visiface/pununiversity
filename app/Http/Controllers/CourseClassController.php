@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
 use App\Models\CourseClass;
+use App\Models\Course;
 
 class CourseClassController extends Controller
 {
@@ -16,11 +18,11 @@ class CourseClassController extends Controller
     public function index()
     {
         $courseclasses = CourseClass::all();
-        $courses = DB::select('select * from courses');
+        $courses = Course::all();
 
         return view('courseclasses.courseclasses', [
             'courseclasses' => $courseclasses,
-            'courses' => $courses
+            'courses' => $courses,
         ]);
     }
 
