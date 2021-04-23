@@ -25,4 +25,9 @@ class CourseClass extends Model
         public function course() {
             return $this->belongsTo(Course::class);
         }
+    
+    // a course class has many students!
+        public function students() {
+            return $this->hasMany(Student::class);
+        }
 }

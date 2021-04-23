@@ -16,4 +16,9 @@ class Student extends Model
         'lname', 
         'email'
     ];
+
+    // a student belongs to a course class!
+        public function course() {
+            return $this->belongsTo(CourseClass::class);
+        }
 }

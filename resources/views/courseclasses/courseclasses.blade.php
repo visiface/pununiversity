@@ -43,11 +43,7 @@
 
                     <div>
                         <span class="uppercase text-blue-500 font-bold text-xs">
-                            {{ $courseclass->course->name }}
-                        </span>
-
-                        <span class="text-xs">
-                            :
+                            {{ $courseclass->course->name }}:
                         </span>
 
                         <span class="uppercase text-blue-400 text-xs">

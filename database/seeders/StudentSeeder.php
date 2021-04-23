@@ -36,7 +36,7 @@ class StudentSeeder extends Seeder
                     'id' => '2',
                     'fname' => 'Arty',
                     'lname' => 'Fischel',
-                    'email' => 'artificialflavors@live.com',
+                    'email' => 'ArtificialFlavors@live.com',
                 ]);
             }
         // END Arty Fischel
@@ -49,7 +49,7 @@ class StudentSeeder extends Seeder
                     'id' => '3',
                     'fname' => 'Robyn',
                     'lname' => 'Banks',
-                    'email' => 'notrobbinbanks@live.com',
+                    'email' => 'NOTrobbinbanks@aol.com',
                 ]);
             }
         // END Robyn Banks
@@ -62,7 +62,7 @@ class StudentSeeder extends Seeder
                     'id' => '4',
                     'fname' => 'Dinah',
                     'lname' => 'Mite',
-                    'email' => 'boomboomdinah@live.com',
+                    'email' => 'B00M_DinahMITE@gmail.com',
                 ]);
             }
         // END Dinah Mite
