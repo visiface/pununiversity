@@ -16,15 +16,15 @@ class GradeSeeder extends Seeder
      */
     public function run()
     {
-        // START VG
-            if ( Grade::where( 'grade', 'VG' )->doesntExist() ) {
+        // START IG
+            if ( Grade::where( 'grade', 'IG' )->doesntExist() ) {
 
                 Grade::create([
                     'id' => '1',
-                    'grade' => 'VG',
+                    'grade' => 'IG',
                 ]);
             }
-        // END VG
+        // END IG
 
 
         // START G
@@ -38,14 +38,14 @@ class GradeSeeder extends Seeder
         // END G
 
 
-        // START IG
-            if ( Grade::where( 'grade', 'IG' )->doesntExist() ) {
+        // START VG
+            if ( Grade::where( 'grade', 'VG' )->doesntExist() ) {
 
                 Grade::create([
                     'id' => '3',
-                    'grade' => 'IG',
+                    'grade' => 'VG',
                 ]);
             }
-        // END IG
+        // END VG
     }
 }

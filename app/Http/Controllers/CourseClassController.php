@@ -72,7 +72,8 @@ class CourseClassController extends Controller
     public function show($id)
     {
         $courseclass = CourseClass::find($id);
-        $student = Student::all();
+        $student = Student::all()
+            ->where('course_id', null, $courseclass->course_id);
 
         return view('courseclasses.show')
             ->with('courseclass', $courseclass)
