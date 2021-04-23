@@ -14,13 +14,13 @@ class CreateGradeStudentsTable extends Migration
     public function up()
     {
         Schema::create('grade_students', function (Blueprint $table) {
-            $table->unsignedInteger('course_id');
-            $table->unsignedInteger('course_class_id');
+            $table->unsignedInteger('grade_id');
+            $table->unsignedInteger('student_id');
 
             $table->foreign('course_id')
                 ->references('id')
-                ->on('courses')
-                ->ondelete('cascade');
+                ->on('grades')
+                ->ondelete('students');
 
             $table->foreign('course_class_id')
                 ->references('id')
