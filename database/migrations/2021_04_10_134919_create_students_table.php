@@ -17,6 +17,8 @@ class CreateStudentsTable extends Migration
             $table->increments('id')
                 ->unique();
             
+            $table->unsignedInteger('course_id');
+            
             $table->string('fname');
             $table->string('lname');
             
@@ -28,6 +30,11 @@ class CreateStudentsTable extends Migration
             
             $table->timestamp('updated_at')
                 ->useCurrent();
+            
+            $table->foreign('course_id')
+                ->references('id')
+                ->on('courses')
+                ->onDelete('cascade');
         });
     }
 

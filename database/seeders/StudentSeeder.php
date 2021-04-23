@@ -21,6 +21,7 @@ class StudentSeeder extends Seeder
 
                 Student::create([
                     'id' => '1',
+                    'course_id' => '3',
                     'fname' => 'Joe',
                     'lname' => 'King',
                     'email' => 'imjokinglol@live.com',
@@ -34,6 +35,7 @@ class StudentSeeder extends Seeder
 
                 Student::create([
                     'id' => '2',
+                    'course_id' => '2',
                     'fname' => 'Arty',
                     'lname' => 'Fischel',
                     'email' => 'ArtificialFlavors@live.com',
@@ -47,6 +49,7 @@ class StudentSeeder extends Seeder
 
                 Student::create([
                     'id' => '3',
+                    'course_id' => '1',
                     'fname' => 'Robyn',
                     'lname' => 'Banks',
                     'email' => 'NOTrobbinbanks@aol.com',
@@ -60,6 +63,7 @@ class StudentSeeder extends Seeder
 
                 Student::create([
                     'id' => '4',
+                    'course_id' => '3',
                     'fname' => 'Dinah',
                     'lname' => 'Mite',
                     'email' => 'B00M_DinahMITE@gmail.com',
