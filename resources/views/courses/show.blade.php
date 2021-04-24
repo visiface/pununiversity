@@ -62,8 +62,10 @@
                 
                 @forelse ($course->courseClasses as $courseclass)
                     <div class="pt-2 pb-3 flex text-left">
-                        <div class="w-1/4 uppercase text-blue-500 font-semibold pt-2">
-                            {{ $courseclass->name }}
+                        <div class="w-1/4 uppercase text-blue-500 hover:text-blue-400 font-semibold pt-2">
+                            <a href="/courseclasses/{{ $courseclass->id }}">
+                                {{ $courseclass->name }}
+                            </a>
                         </div>
 
                         <div class="w-1/4 font-semibold uppercase pt-2">
