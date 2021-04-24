@@ -22,4 +22,9 @@ class Student extends Model
         public function course() {
             return $this->belongsToMany(CourseClass::class);
         }
+
+        // a student belongs to a course class!
+        public function grades() {
+            return $this->belongsToMany(Grade::class);
+        }
 }

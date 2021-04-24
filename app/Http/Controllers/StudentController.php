@@ -68,6 +68,8 @@ class StudentController extends Controller
         $courseclass = CourseClass::all()
             ->where('course_id', null, $student->course_id);
 
+        var_dump($student->grades);
+
         return view('students.show')
             ->with('student', $student)
             ->with('courseclass', $courseclass);
