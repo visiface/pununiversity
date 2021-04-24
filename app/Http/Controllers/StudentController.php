@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Student;
+use App\Models\CourseClass;
+
 
 class StudentController extends Controller
 {
@@ -15,7 +17,11 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::all();
+
+        return view('students.students', [
+            'students' => $students
+        ]);
     }
 
     /**
@@ -25,7 +31,11 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        $courses = DB::select('select * from courses');
+
+        return view('students.create', [
+            'courses' => $courses
+        ]);
     }
 
     /**
@@ -36,7 +46,14 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student = Student::create([
+            'course_id' => $request->input('course_id'),
+            'fname' => $request->input('fname'),
+            'lname' => $request->input('lname'),
+            'email' => $request->input('email')
+        ]);
+
+        return redirect('/courses');
     }
 
     /**
@@ -47,7 +64,13 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $student = Student::find($id);
+        $courseclass = CourseClass::all()
+            ->where('course_id', null, $student->course_id);
+
+        return view('students.show')
+            ->with('student', $student)
+            ->with('courseclass', $courseclass);
     }
 
     /**
@@ -58,7 +81,12 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = Student::find($id);
+        $courses = DB::select('select * from courses');
+        
+        return view('students.edit')
+            ->with('student', $student)
+            ->with('courses', $courses);
     }
 
     /**
@@ -70,7 +98,15 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student = Student::where('id', $id)
+            ->update([
+                'course_id' => $request->input('course_id'),
+                'fname' => $request->input('fname'),
+                'lname' => $request->input('lname'),
+                'email' => $request->input('email')
+        ]);
+
+        return redirect('/courses');
     }
 
     /**
@@ -79,8 +115,10 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Student $student)
     {
-        //
+        $student->delete();
+
+        return redirect('/courses');
     }
 }
