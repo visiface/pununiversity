@@ -19,6 +19,11 @@ class Student extends Model
 
     // a student belongs to a course class!
         public function course() {
-            return $this->belongsTo(CourseClass::class);
+            return $this->belongsToMany(CourseClass::class);
+        }
+
+    // a student has many grades in each course class!
+        public function grade() {
+            return $this->hasMany(Grade::class);
         }
 }
