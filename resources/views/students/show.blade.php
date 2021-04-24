@@ -47,7 +47,7 @@
                         Actions
                     </div>
                 </div>
-{{ $gradestudent }}
+
                 
                 @forelse ($courseclass as $courseclass)
                     <div class="pt-2 pb-3 flex text-left">
